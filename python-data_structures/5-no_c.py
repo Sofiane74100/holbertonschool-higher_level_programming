@@ -4,4 +4,3 @@ def no_c(my_string):
     translation_table = str.maketrans("", "", characters)
     my_string = my_string.translate(translation_table)
     return my_string
-
