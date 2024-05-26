@@ -23,5 +23,5 @@ Traceback (most recent call last):
 TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
 test where no last_name
->>> say_my_name("Sofiane")
-My name is Sofiane
+>>> say_my_name("Haris")
+My name is Haris 
