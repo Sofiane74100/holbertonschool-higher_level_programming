@@ -1,0 +1,34 @@
+# 5-text_indentation.txt
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+"""prints a text with 2 new lines after each of these characters: ., ? and :"""
+
+Test when we have more one string
+>>> text_indentation("I am", "football", "holberton")
+Traceback (most recent call last):
+TypeError: text_indentation() takes 1 positional argument but 3 were given
+
+Test where text is not a string
+>>> text_indentation(1)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+Test where text is an empty string
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test where text contains no '.', '?' or ':'
+>>> text_indentation("This is a test sentence")
+This is a test sentence
+
+Test where text contains '.', '?' or ':'
+>>> text_indentation("My name is haris.")
+My name is haris.
+<BLANKLINE>
+
+
+
+
+
+
