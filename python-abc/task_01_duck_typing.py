@@ -1,4 +1,14 @@
+from abc import ABC, abstractmethod
 import math
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+    
+    @abstractmethod
+    def perimeter(self):
+        pass
 
 class Circle(Shape):
     def __init__(self, radius):
