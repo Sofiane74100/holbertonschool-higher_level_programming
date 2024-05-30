@@ -1,26 +1,26 @@
 class Fish:
     def swim(self):
-        print("Le poisson nage")
+        print("The fish is swimming")
     
     def habitat(self):
-        print("Le poisson vit dans l'eau")
+        print("The fish lives in water")
 
 class Bird:
     def fly(self):
-        print("L'oiseau vole")
+        print("The bird is flying")
     
     def habitat(self):
-        print("L'oiseau vit dans le ciel")
+        print("The bird lives in the sky")
 
 class FlyingFish(Fish, Bird):
     def swim(self):
-        print("Le poisson volant nage !")
+        print("The flying fish is swimming!")
     
     def fly(self):
-        print("Le poisson volant plane !")
+        print("The flying fish is soaring!")
     
     def habitat(self):
-        print("Le poisson volant vit à la fois dans l'eau et dans le ciel !")
+        print("The flying fish lives both in water and the sky!")
 
 if __name__ == "__main__":
     poisson_volant = FlyingFish()
