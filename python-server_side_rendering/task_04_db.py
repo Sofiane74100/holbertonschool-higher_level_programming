@@ -50,17 +50,17 @@ def display_products():
         elif source == 'sql':
             products = fetch_data_from_sqlite()
         else:
-            return render_template('product_display.html', error="Source incorrecte")
+            return render_template('product_display.html', error="Wrong source")
 
         if product_id:
             products = [p for p in products if p['id'] == int(product_id)]
             if not products:
-                return render_template('product_display.html', error="Produit non trouvé")
+                return render_template('product_display.html', error="Product not found")
 
         return render_template('product_display.html', products=products)
     
     except FileNotFoundError:
-        return render_template('product_display.html', error="Fichier non trouvé.")
+        return render_template('product_display.html', error="File not found.")
     except Exception as e:
         return render_template('product_display.html', error=str(e))
 
