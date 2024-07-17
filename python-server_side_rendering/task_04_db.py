@@ -35,3 +35,34 @@ def fetch_data_from_sqlite():
             'category': product[2],
             'price': product[3]
         })
+    return result
+
+@app.route('/products')
+def display_products():
+    source = request.args.get('source', 'json')
+    product_id = request.args.get('id')
+    
+    try:
+        if source == 'json':
+            products = read_json_file('products.json')
+        elif source == 'csv':
+            products = read_csv_file('products.csv')
+        elif source == 'sql':
+            products = fetch_data_from_sqlite()
+        else:
+            return render_template('product_display.html', error="Source incorrecte")
+
+        if product_id:
+            products = [p for p in products if p['id'] == int(product_id)]
+            if not products:
+                return render_template('product_display.html', error="Produit non trouvé")
+
+        return render_template('product_display.html', products=products)
+    
+    except FileNotFoundError:
+        return render_template('product_display.html', error="Fichier non trouvé.")
+    except Exception as e:
+        return render_template('product_display.html', error=str(e))
+
+if __name__ == '__main__':
+    app.run(debug=True)
