@@ -1,0 +1,4 @@
+[
+    {"id": 1, "name": "Ordinateur portable", "category": "Électronique", "price": 799.99},
+    {"id": 2, "name": "Mug à café", "category": "Articles ménagers", "price": 15.99}
+]
