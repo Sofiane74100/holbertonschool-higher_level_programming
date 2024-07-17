@@ -4,7 +4,6 @@ def create_database():
     conn = sqlite3.connect('products.db')
     cursor = conn.cursor()
     
-    # Création de la table Products si elle n'existe pas
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS Products (
             id INTEGER PRIMARY KEY,
@@ -14,12 +13,11 @@ def create_database():
         )
     ''')
     
-    # Insertion des données d'exemple dans la table Products
     cursor.execute('''
         INSERT INTO Products (id, name, category, price)
         VALUES
-        (1, 'Ordinateur portable', 'Électronique', 799.99),
-        (2, 'Mug à café', 'Articles ménagers', 15.99)
+        (1, 'Laptop', 'Electronics', 799.99),
+        (2, 'Coffee Mug', 'Home Goods', 15.99)
     ''')
     
     conn.commit()
